@@ -1732,15 +1732,15 @@ namespace SL.FG.FFL.WebParts.MSAForm
                                         string tempUsername = Utility.GetUsername(auditedBy.LoginName, true);
                                         spListItem["AuditedBy"] = tempUsername;
                                     }
-                                    if (!String.IsNullOrEmpty(areaAudited))
+                                    if (!String.IsNullOrEmpty(areaAudited) || msaId != null)
                                     {
                                         spListItem["AreaAudited"] = areaAudited;
                                     }
-                                    if (!String.IsNullOrEmpty(accompaniedBy))
+                                    if (!String.IsNullOrEmpty(accompaniedBy) || msaId != null)
                                     {
                                         spListItem["AccompaniedBy"] = accompaniedBy;
                                     }
-                                    if (!String.IsNullOrEmpty(designation))
+                                    if (!String.IsNullOrEmpty(designation) || msaId != null)
                                     {
                                         spListItem["Designation"] = designation;
                                     }

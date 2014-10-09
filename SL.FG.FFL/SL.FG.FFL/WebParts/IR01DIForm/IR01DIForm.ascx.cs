@@ -745,7 +745,7 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
 
                                 string masterGroup = Utility.GetValueByKey("MasterGroup");
 
-                                List<SPUser> lstSPUsers2 = Utility.GetGroupMembers(approversGroup);
+                                List<SPUser> lstSPUsers2 = Utility.GetGroupMembers(masterGroup);
 
                                 StringBuilder sbAssignee = new StringBuilder();
                                 StringBuilder sbAssigneeEmail = new StringBuilder();
@@ -1623,7 +1623,7 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                                 DisableControls(true);
                                                 return false;
                                             }
-                                        }                                        
+                                        }
 
                                     }
 
@@ -2338,26 +2338,13 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                         spListItem["PeopleInterviewed"] = peopleInterviewed;
                                         spListItem["RootCauses"] = rootCauses;
 
-                                        if (!String.IsNullOrEmpty(this.incidentDescription_ta.Value))
-                                        {
-                                            spListItem["IncidentDescription"] = this.incidentDescription_ta.Value;
-                                        }
+                                        spListItem["IncidentDescription"] = this.incidentDescription_ta.Value;
 
-                                        if (!String.IsNullOrEmpty(this.incidentActionsTaken_ta.Value))
-                                        {
-                                            spListItem["IncidentActionTaken"] = this.incidentActionsTaken_ta.Value;
-                                        }
+                                        spListItem["IncidentActionTaken"] = this.incidentActionsTaken_ta.Value;
 
-                                        if (!String.IsNullOrEmpty(this.incidentTitle_tf.Value))
-                                        {
-                                            spListItem["IncidentTitle"] = this.incidentTitle_tf.Value;
-                                        }
+                                        spListItem["IncidentTitle"] = this.incidentTitle_tf.Value;
 
-
-                                        if (!String.IsNullOrEmpty(this.hdnFRID.Value))
-                                        {
-                                            spListItem["FlashReportID"] = this.hdnFRID.Value;
-                                        }
+                                        spListItem["FlashReportID"] = this.hdnFRID.Value;
 
                                         if (isApproveCase)
                                         {
@@ -2413,15 +2400,9 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                             }
                                         }
 
-                                        if (!String.IsNullOrEmpty(this.rvf_reportViewed_ta.Value))
-                                        {
-                                            spListItem["HSEApprover"] = this.rvf_reportViewed_ta.Value;
-                                        }
+                                        spListItem["HSEApprover"] = this.rvf_reportViewed_ta.Value;
 
-                                        if (!String.IsNullOrEmpty(this.UM_HSE_Comments_ta.Value))
-                                        {
-                                            spListItem["HSEComments"] = this.UM_HSE_Comments_ta.Value;
-                                        }
+                                        spListItem["HSEComments"] = this.UM_HSE_Comments_ta.Value;
                                     }
                                     //new 
                                     bool isAlreadySaved = false;
@@ -2454,15 +2435,10 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                     spListItem["IsApproved"] = isApproveCase;
                                     spListItem["IsClosed"] = isLastSave;
 
-                                    if (!String.IsNullOrEmpty(this.IRRCQualityScore_ta.Value))
-                                    {
-                                        spListItem["IRRCQualityScore"] = this.IRRCQualityScore_ta.Value;
-                                    }
+                                    spListItem["IRRCQualityScore"] = this.IRRCQualityScore_ta.Value;
 
-                                    if (!String.IsNullOrEmpty(this.IRRCQualityAccessedBy_ta.Value))
-                                    {
-                                        spListItem["QualityAssessedBy"] = this.IRRCQualityAccessedBy_ta.Value;
-                                    }
+                                    spListItem["QualityAssessedBy"] = this.IRRCQualityAccessedBy_ta.Value;
+
 
                                     //new 
                                     if (isAlreadySaved == false)
@@ -2497,7 +2473,6 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                         sentFrom = this.hdnSentFrom.Value;
                                     }
 
-
                                     if (isSaved && isAlreadySaved == false)
                                     {
                                         if (recommendationIds != null)
@@ -2527,7 +2502,7 @@ namespace SL.FG.FFL.WebParts.IR01DIForm
                                         if (isAlreadySaved == false && Page.Request.QueryString["IR01DI_Id"] == null && Page.Request.QueryString["FRID"] != null && isSavedAsDraft == true && isSubmitCase == false && isApproveCase == false && isForwardCase == false && isLastSave == false)
                                         {
                                             IRSavedAsDraft(oSPWeb, Convert.ToInt32(this.hdnIR01DI_Id.Value), Convert.ToInt32(this.hdnFRID.Value));
-                                        }                                        
+                                        }
                                         else if (Page.Request.QueryString["IR01DI_Id"] == null && Page.Request.QueryString["FRID"] != null && isSavedAsDraft == false && isSubmitCase == true)
                                         {
                                             IRSubmittedByTeamLead(oSPWeb, Convert.ToInt32(this.hdnIR01DI_Id.Value), Convert.ToInt32(this.hdnFRID.Value));

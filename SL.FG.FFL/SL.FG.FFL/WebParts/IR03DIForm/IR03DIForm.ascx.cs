@@ -725,7 +725,7 @@ namespace SL.FG.FFL.WebParts.IR03DIForm
 
                                 string masterGroup = Utility.GetValueByKey("MasterGroup");
 
-                                List<SPUser> lstSPUsers2 = Utility.GetGroupMembers(approversGroup);
+                                List<SPUser> lstSPUsers2 = Utility.GetGroupMembers(masterGroup);
 
                                 StringBuilder sbAssignee = new StringBuilder();
                                 StringBuilder sbAssigneeEmail = new StringBuilder();
@@ -2360,55 +2360,27 @@ namespace SL.FG.FFL.WebParts.IR03DIForm
                                         spListItem["RootCauses"] = rootCauses;
 
 
-                                        if (!String.IsNullOrEmpty(this.incidentDescription_ta.Value))
-                                        {
                                             spListItem["IncidentDescription"] = this.incidentDescription_ta.Value;
-                                        }
-
-                                        if (!String.IsNullOrEmpty(this.incidentTitle_tf.Value))
-                                        {
+                                        
                                             spListItem["IncidentTitle"] = this.incidentTitle_tf.Value;
-                                        }
-
-                                        if (!String.IsNullOrEmpty(this.conclusion_ta.Value))
-                                        {
+                                        
                                             spListItem["Conclusion"] = this.conclusion_ta.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnCulturalBasedElements.Value))
-                                        {
+                                        
                                             spListItem["CulturalBasedElements"] = this.hdnCulturalBasedElements.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnRiskBasedElements.Value))
-                                        {
+                                        
                                             spListItem["RiskBasedElements"] = this.hdnRiskBasedElements.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnBasicActivityInProgress.Value))
-                                        {
+                                        
                                             spListItem["BasicActivityInProgress"] = this.hdnBasicActivityInProgress.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnMiscellaneousIncidents.Value))
-                                        {
+                                       
                                             spListItem["MiscellaneousIncidents"] = this.hdnMiscellaneousIncidents.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnProcessSafetyIncidents.Value))
-                                        {
+                                        
                                             spListItem["ProcessSafetyIncidents"] = this.hdnProcessSafetyIncidents.Value;
-                                        }
-                                        if (!String.IsNullOrEmpty(this.hdnActualOrPotentialInquiry.Value))
-                                        {
+                                        
                                             spListItem["ActualOrPotentialInquiry"] = this.hdnActualOrPotentialInquiry.Value;
-                                        }
-
-                                        if (!String.IsNullOrEmpty(this.lateSubmissionReasons_ta.Value))
-                                        {
+                                       
                                             spListItem["LateSubmissionReasons"] = this.lateSubmissionReasons_ta.Value;
-                                        }
-
-
-                                        if (!String.IsNullOrEmpty(this.hdnFRID.Value))
-                                        {
+                                       
                                             spListItem["FlashReportID"] = this.hdnFRID.Value;
-                                        }
 
                                         if (isApproveCase)
                                         {
@@ -2444,15 +2416,9 @@ namespace SL.FG.FFL.WebParts.IR03DIForm
                                             }
                                         }
 
-                                        if (!String.IsNullOrEmpty(this.rvf_reportViewed_ta.Value))
-                                        {
                                             spListItem["HSEApprover"] = this.rvf_reportViewed_ta.Value;
-                                        }
-
-                                        if (!String.IsNullOrEmpty(this.UM_HSE_Comments_ta.Value))
-                                        {
-                                            spListItem["HSEComments"] = this.UM_HSE_Comments_ta.Value;
-                                        }
+                                        
+                                            spListItem["HSEComments"] = this.UM_HSE_Comments_ta.Value;                                        
                                     }
 
                                     //new 
@@ -2488,15 +2454,10 @@ namespace SL.FG.FFL.WebParts.IR03DIForm
                                     spListItem["IsApproved"] = isApproveCase;
                                     spListItem["IsClosed"] = isLastSave;
 
-                                    if (!String.IsNullOrEmpty(this.IRRCQualityScore_ta.Value))
-                                    {
                                         spListItem["IRRCQualityScore"] = this.IRRCQualityScore_ta.Value;
-                                    }
-
-                                    if (!String.IsNullOrEmpty(this.IRRCQualityAccessedBy_ta.Value))
-                                    {
+                                    
                                         spListItem["QualityAssessedBy"] = this.IRRCQualityAccessedBy_ta.Value;
-                                    }
+                                   
 
                                     //new 
                                     if (isAlreadySaved == false)

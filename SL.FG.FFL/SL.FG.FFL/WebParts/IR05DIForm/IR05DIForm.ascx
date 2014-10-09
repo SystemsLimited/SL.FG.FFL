@@ -487,7 +487,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-lg-6">
-                                    <label>Do you have concurrence of responsible individuals on action items completion dates</label>
+                                    <label>Do you have concurrence of responsible individual on action items completion date?</label>
                                     <div class="form-group">
                                         <div class="form-inline col-lg-6">
                                             <label>Yes</label>
