@@ -117,7 +117,7 @@ namespace SL.FG.FFL.WebParts.IntermediateOnForm
 
                             oWebSite.AllowUnsafeUpdates = false;
 
-                            string IR01Url = Utility.GetRedirectUrl("IR1FormLink");
+                            string IR01Url = Utility.GetRedirectUrl("IR_1FormLink");
 
                             if (!String.IsNullOrEmpty(IR01Url))
                             {

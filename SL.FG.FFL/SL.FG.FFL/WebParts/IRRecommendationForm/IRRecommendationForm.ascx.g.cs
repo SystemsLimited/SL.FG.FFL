@@ -1038,55 +1038,55 @@ namespace SL.FG.FFL.WebParts.IRRecommendationForm {
                         "n != null && action != \"\") {\r\n            if (action == \"Save\") {\r\n             " +
                         "   message = \"Do you want to Save IR-Recommendation?\";\r\n                flag = t" +
                         "rue;\r\n            }\r\n            else if (action == \"Approve\") {\r\n              " +
-                        "  message = \"Do you want to Approve Save IR-Recommendation?\";\r\n                f" +
-                        "lag = true;\r\n            }\r\n            else if (action == \"Reject\") {\r\n        " +
-                        "        message = \"Do you want to Reject Save IR-Recommendation?\";\r\n            " +
-                        "    flag = true;\r\n            }\r\n            else if (action == \"Send\") {\r\n     " +
-                        "           message = \"Do you want to Send Save IR-Recommendation?\";\r\n           " +
-                        "     flag = true;\r\n            }\r\n        }\r\n\r\n        var confirm = window.conf" +
-                        "irm(message);\r\n        if (!confirm) {\r\n            return false;\r\n        }\r\n\r\n" +
-                        "        if (flag == true && $(\'[id$=closureJustification_ta]\').val() == \"\") {\r\n " +
-                        "           alert(\"Please enter closure justification\");\r\n            $(\'[id$=clo" +
-                        "sureJustification_ta]\').focus();\r\n            return false;\r\n        }\r\n\r\n      " +
-                        "  if (flag == true && $(\'[id$=approvalAuthority_ddl] option:selected\').val() == " +
-                        "\"0\") {\r\n            alert(\"Please select approval authority\");\r\n            $(\'[" +
-                        "id$=approvalAuthority_ddl]\').focus();\r\n            return false;\r\n        }\r\n   " +
-                        "     return true;\r\n    }\r\n\r\n    function printContent() {\r\n        var data = $(" +
-                        "\"#printableArea\").html();\r\n\r\n        var popupWindow = window.open(\'Recommendati" +
-                        "on\', \'printwin\', \'left=10,top=10,width=1000,height=1000\');\r\n        popupWindow." +
-                        "document.write(\'<HTML>\\n<HEAD>\\n\');\r\n        popupWindow.document.write(\'<TITLE>" +
-                        "Recommendation Form</TITLE>\\n\');\r\n        popupWindow.document.write(\'<URL></URL" +
-                        ">\\n\');\r\n        popupWindow.document.write(\"<link href=\'/_layouts/15/SL.FG.FFL/C" +
-                        "SS/BS3/bootstrap3.min.css\' rel=\'stylesheet\'/>\\n\");\r\n        popupWindow.document" +
-                        ".write(\"<link href=\'/_layouts/15/SL.FG.FFL/CSS/FGStyle.css\' rel=\'stylesheet\'/>\\n" +
-                        "\");\r\n        popupWindow.document.write(\'<script>\\n\');\r\n        popupWindow.docu" +
-                        "ment.write(\'function print_win(){\\n\');\r\n        popupWindow.document.write(\'\\n w" +
-                        "indow.print();\\n\');\r\n        popupWindow.document.write(\'}\\n\');\r\n        popupWi" +
-                        "ndow.document.write(\'<\\/script>\\n\');\r\n        popupWindow.document.write(\'</HEAD" +
-                        ">\\n\');\r\n        popupWindow.document.write(\'<BODY onload=\"print_win()\" style=\"ma" +
-                        "rgin: 10px 10px 10px 10px; overflow:scroll;\">\\n\');\r\n        popupWindow.document" +
-                        ".write(data);\r\n        popupWindow.document.write(\'</BODY>\\n\');\r\n        popupWi" +
-                        "ndow.document.write(\'</HTML>\\n\');\r\n        popupWindow.document.close();\r\n    }\r" +
-                        "\n\r\n    $(document).ready(function () {\r\n\r\n        $(\'[id$=viewHistory_btn]\').on(" +
-                        "\'click\', function () {\r\n            $(\'[id$=viewHistory_div]\').toggle();\r\n      " +
-                        "  });\r\n\r\n        $(\'span.removeLink\').on(\'click\', function () {\r\n            if " +
-                        "($(\'[id$=hdnIsChangesAllowed]\').val() == \"0\") {\r\n                return;\r\n      " +
-                        "      }\r\n            var par = $(this).closest(\'tr\');\r\n            var fileName " +
-                        "= par.find(\'span.fileName\');\r\n\r\n            if (fileName != \'undefined\' && fileN" +
-                        "ame != \"\" && fileName != null) {\r\n                var filenames = $(\'[id$=hdnFil" +
-                        "esNames]\').val();\r\n                filenames += \"~\" + fileName.text();\r\n\r\n      " +
-                        "          $(\'[id$=hdnFilesNames]\').val(filenames);\r\n            }\r\n            p" +
-                        "ar.remove();\r\n        });\r\n\r\n        // Capturing when the user modifies a field" +
-                        "\r\n        var warnMessage = \'You have unsaved changes on this page!\';\r\n        v" +
-                        "ar formModified = new Boolean();\r\n        formModified = false;\r\n        $(\'inpu" +
-                        "t:not(:button,:submit),textarea,select\').on(\'change\', function () {\r\n           " +
-                        " formModified = true;\r\n        });\r\n        // Checking if the user has modified" +
-                        " the form upon closing window\r\n        $(\'input:submit\').on(\'click\', function (e" +
-                        ") {\r\n            formModified = false;\r\n        });\r\n        window.onbeforeunlo" +
-                        "ad = function () {\r\n            if (formModified != false) return warnMessage;\r\n" +
-                        "        }\r\n\r\n        $(\'.panel-collapse\').collapse(\'show\');\r\n\r\n        $(\'[id$=r" +
-                        "esponsiblePerson_PeopleEditor_downlevelTextBox]\').attr(\"disabled\", \"disabled\");\r" +
-                        "\n    });\r\n</script>\r\n"));
+                        "  message = \"Do you want to Approve IR-Recommendation?\";\r\n                flag =" +
+                        " true;\r\n            }\r\n            else if (action == \"Reject\") {\r\n             " +
+                        "   message = \"Do you want to Reject IR-Recommendation?\";\r\n                flag =" +
+                        " true;\r\n            }\r\n            else if (action == \"Send\") {\r\n               " +
+                        " message = \"Do you want to Send IR-Recommendation?\";\r\n                flag = tru" +
+                        "e;\r\n            }\r\n        }\r\n\r\n        var confirm = window.confirm(message);\r\n" +
+                        "        if (!confirm) {\r\n            return false;\r\n        }\r\n\r\n        if (fla" +
+                        "g == true && $(\'[id$=closureJustification_ta]\').val() == \"\") {\r\n            aler" +
+                        "t(\"Please enter closure justification\");\r\n            $(\'[id$=closureJustificati" +
+                        "on_ta]\').focus();\r\n            return false;\r\n        }\r\n\r\n        if (flag == t" +
+                        "rue && $(\'[id$=approvalAuthority_ddl] option:selected\').val() == \"0\") {\r\n       " +
+                        "     alert(\"Please select approval authority\");\r\n            $(\'[id$=approvalAut" +
+                        "hority_ddl]\').focus();\r\n            return false;\r\n        }\r\n        return tru" +
+                        "e;\r\n    }\r\n\r\n    function printContent() {\r\n        var data = $(\"#printableArea" +
+                        "\").html();\r\n\r\n        var popupWindow = window.open(\'Recommendation\', \'printwin\'" +
+                        ", \'left=10,top=10,width=1000,height=1000\');\r\n        popupWindow.document.write(" +
+                        "\'<HTML>\\n<HEAD>\\n\');\r\n        popupWindow.document.write(\'<TITLE>Recommendation " +
+                        "Form</TITLE>\\n\');\r\n        popupWindow.document.write(\'<URL></URL>\\n\');\r\n       " +
+                        " popupWindow.document.write(\"<link href=\'/_layouts/15/SL.FG.FFL/CSS/BS3/bootstra" +
+                        "p3.min.css\' rel=\'stylesheet\'/>\\n\");\r\n        popupWindow.document.write(\"<link h" +
+                        "ref=\'/_layouts/15/SL.FG.FFL/CSS/FGStyle.css\' rel=\'stylesheet\'/>\\n\");\r\n        po" +
+                        "pupWindow.document.write(\'<script>\\n\');\r\n        popupWindow.document.write(\'fun" +
+                        "ction print_win(){\\n\');\r\n        popupWindow.document.write(\'\\n window.print();\\" +
+                        "n\');\r\n        popupWindow.document.write(\'}\\n\');\r\n        popupWindow.document.w" +
+                        "rite(\'<\\/script>\\n\');\r\n        popupWindow.document.write(\'</HEAD>\\n\');\r\n       " +
+                        " popupWindow.document.write(\'<BODY onload=\"print_win()\" style=\"margin: 10px 10px" +
+                        " 10px 10px; overflow:scroll;\">\\n\');\r\n        popupWindow.document.write(data);\r\n" +
+                        "        popupWindow.document.write(\'</BODY>\\n\');\r\n        popupWindow.document.w" +
+                        "rite(\'</HTML>\\n\');\r\n        popupWindow.document.close();\r\n    }\r\n\r\n    $(docume" +
+                        "nt).ready(function () {\r\n\r\n        $(\'[id$=viewHistory_btn]\').on(\'click\', functi" +
+                        "on () {\r\n            $(\'[id$=viewHistory_div]\').toggle();\r\n        });\r\n\r\n      " +
+                        "  $(\'span.removeLink\').on(\'click\', function () {\r\n            if ($(\'[id$=hdnIsC" +
+                        "hangesAllowed]\').val() == \"0\") {\r\n                return;\r\n            }\r\n      " +
+                        "      var par = $(this).closest(\'tr\');\r\n            var fileName = par.find(\'spa" +
+                        "n.fileName\');\r\n\r\n            if (fileName != \'undefined\' && fileName != \"\" && fi" +
+                        "leName != null) {\r\n                var filenames = $(\'[id$=hdnFilesNames]\').val(" +
+                        ");\r\n                filenames += \"~\" + fileName.text();\r\n\r\n                $(\'[i" +
+                        "d$=hdnFilesNames]\').val(filenames);\r\n            }\r\n            par.remove();\r\n " +
+                        "       });\r\n\r\n        // Capturing when the user modifies a field\r\n        var w" +
+                        "arnMessage = \'You have unsaved changes on this page!\';\r\n        var formModified" +
+                        " = new Boolean();\r\n        formModified = false;\r\n        $(\'input:not(:button,:" +
+                        "submit),textarea,select\').on(\'change\', function () {\r\n            formModified =" +
+                        " true;\r\n        });\r\n        // Checking if the user has modified the form upon " +
+                        "closing window\r\n        $(\'input:submit\').on(\'click\', function (e) {\r\n          " +
+                        "  formModified = false;\r\n        });\r\n        window.onbeforeunload = function (" +
+                        ") {\r\n            if (formModified != false) return warnMessage;\r\n        }\r\n\r\n  " +
+                        "      $(\'.panel-collapse\').collapse(\'show\');\r\n\r\n        $(\'[id$=responsiblePerso" +
+                        "n_PeopleEditor_downlevelTextBox]\').attr(\"disabled\", \"disabled\");\r\n    });\r\n</scr" +
+                        "ipt>\r\n"));
         }
         
         [GeneratedCodeAttribute("Microsoft.VisualStudio.SharePoint.ProjectExtensions.CodeGenerators.SharePointWebP" +

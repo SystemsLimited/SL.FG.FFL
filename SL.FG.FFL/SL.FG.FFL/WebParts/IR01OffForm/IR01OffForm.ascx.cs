@@ -889,6 +889,7 @@ namespace SL.FG.FFL.WebParts.IR01OffForm
                         }
 
                     }
+                    
 
                     if (!String.IsNullOrEmpty(Convert.ToString(imiItem["IncidentScore"])))
                     {
@@ -1093,7 +1094,10 @@ namespace SL.FG.FFL.WebParts.IR01OffForm
                     if (!String.IsNullOrEmpty(Convert.ToString(imiItem["MORemarks"])))
 
                         this.MORemarks_ta.Value = Convert.ToString(imiItem["MORemarks"]);
-
+                    else
+                    {
+                        this.MOFields_div.Visible = false;                       
+                    }
                 }
 
             }
@@ -1475,6 +1479,33 @@ namespace SL.FG.FFL.WebParts.IR01OffForm
 
                 if (imiItem != null)
                 {
+                    if (!String.IsNullOrEmpty(this.hdnFilesNames.Value))
+                    {
+                        var fileNames = hdnFilesNames.Value.Split('~');
+
+                        foreach (var item in fileNames)
+                        {
+                            if (!String.IsNullOrEmpty(item))
+                            {
+                                imiItem.Attachments.Delete(item);
+                            }
+                        }
+                    }
+
+                    if (this.fileUploadControl.HasFiles)
+                    {
+                        foreach (var uploadedFile in fileUploadControl.PostedFiles)
+                        {
+                            Stream fs = uploadedFile.InputStream;
+                            byte[] _bytes = new byte[fs.Length];
+                            fs.Position = 0;
+                            fs.Read(_bytes, 0, (int)fs.Length);
+                            fs.Close();
+                            fs.Dispose();
+
+                            imiItem.Attachments.Add(uploadedFile.FileName, _bytes);
+                        }
+                    }
 
 
                     if (!String.IsNullOrEmpty(Convert.ToString(this.IncidentCategory_hdn.Value)))

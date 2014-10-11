@@ -250,6 +250,8 @@ namespace SL.FG.FFL.WebParts.FlashReportOnForm {
             @__ctrl.AutoPostBack = false;
             @__ctrl.UseTimeZoneAdjustment = false;
             @__ctrl.LocaleId = 2057;
+            @__ctrl.Load -= new System.EventHandler(this.DateOfIncident_dtc_DateChanged);
+            @__ctrl.Load += new System.EventHandler(this.DateOfIncident_dtc_DateChanged);
             return @__ctrl;
         }
         
@@ -452,6 +454,8 @@ namespace SL.FG.FFL.WebParts.FlashReportOnForm {
             @__ctrl.AutoPostBack = false;
             @__ctrl.UseTimeZoneAdjustment = false;
             @__ctrl.LocaleId = 2057;
+            @__ctrl.Load -= new System.EventHandler(this.TargetDate_dtc_DateChanged);
+            @__ctrl.Load += new System.EventHandler(this.TargetDate_dtc_DateChanged);
             return @__ctrl;
         }
         

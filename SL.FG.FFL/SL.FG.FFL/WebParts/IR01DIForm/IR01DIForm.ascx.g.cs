@@ -1851,7 +1851,7 @@ namespace SL.FG.FFL.WebParts.IR01DIForm {
                         "          var departmentId = $this.find(\"span.departmentId\").html();\r\n          " +
                         "      var departmentName = $this.find(\"span.departmentName\").html();\r\n          " +
                         "      var targetDate = $this.find(\"span.targetDate\").html();\r\n                va" +
-                        "r observationSpot = $this.find(\"span.concurrenceOfRP\").html();\r\n                " +
+                        "r concurrenceOfRP = $this.find(\"span.concurrenceOfRP\").html();\r\n                " +
                         "var status = $this.find(\"span.status\").html();\r\n\r\n                if (typeof rec" +
                         "ommendationId == \'undefined\') {\r\n                    recommendationId = 0;\r\n    " +
                         "            }\r\n                if (typeof recommendationNo == \'undefined\') {\r\n  " +

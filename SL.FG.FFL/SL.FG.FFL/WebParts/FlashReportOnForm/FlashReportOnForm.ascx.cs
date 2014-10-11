@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -152,7 +153,10 @@ namespace SL.FG.FFL.WebParts.FlashReportOnForm
         //    }
         //}
 
-
+        protected void DateOfIncident_dtc_DateChanged(object sender, EventArgs e)
+        {
+            this.DateOfIncident_dtc.MaxDate = DateTime.Now.Date; // starting date as DateTime object
+        }
         private void LoadPageOnUserBases(String IRID)
         {
 
@@ -224,7 +228,10 @@ namespace SL.FG.FFL.WebParts.FlashReportOnForm
                 SPDiagnosticsService.Local.WriteTrace(0, new SPDiagnosticsCategory("SL.FG.FFL(FlashReportOnJobForm->LoadPageOnUserBases)", TraceSeverity.Unexpected, EventSeverity.Error), TraceSeverity.Unexpected, ex.Message, ex.StackTrace);
             }
         }
-
+        protected void TargetDate_dtc_DateChanged(object sender, EventArgs e)
+        {
+            this.TargetDate_dtc.MinDate = DateTime.Now.Date; // starting date as DateTime object
+        }
         private String Check1StFromDraft(SPWeb oWebSite, String IRID)
         {
             String FRID = null;
@@ -1157,6 +1164,33 @@ namespace SL.FG.FFL.WebParts.FlashReportOnForm
                 if (ListItem != null)
                 {
 
+                  if (!String.IsNullOrEmpty(this.hdnFilesNames.Value))
+                    {
+                        var fileNames = hdnFilesNames.Value.Split('~');
+
+                        foreach (var item in fileNames)
+                        {
+                            if (!String.IsNullOrEmpty(item))
+                            {
+                                ListItem.Attachments.Delete(item);
+                            }
+                        }
+                    }
+
+                    if (this.fileUploadControl.HasFiles)
+                    {
+                        foreach (var uploadedFile in fileUploadControl.PostedFiles)
+                        {
+                            Stream fs = uploadedFile.InputStream;
+                            byte[] _bytes = new byte[fs.Length];
+                            fs.Position = 0;
+                            fs.Read(_bytes, 0, (int)fs.Length);
+                            fs.Close();
+                            fs.Dispose();
+
+                            ListItem.Attachments.Add(uploadedFile.FileName, _bytes);
+                        }
+                    }
 
 
                     if (!String.IsNullOrEmpty(Convert.ToString(this.IR_IReceivingDate_dtc.SelectedDate)))

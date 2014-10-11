@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Text;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -1375,7 +1376,33 @@ namespace SL.FG.FFL.WebParts.IR05DIForm
                     if (IR5Item != null)
                     {
 
+                        if (!String.IsNullOrEmpty(this.hdnFilesNames.Value))
+                        {
+                            var fileNames = hdnFilesNames.Value.Split('~');
 
+                            foreach (var item in fileNames)
+                            {
+                                if (!String.IsNullOrEmpty(item))
+                                {
+                                    IR5Item.Attachments.Delete(item);
+                                }
+                            }
+                        }
+
+                        if (this.fileUploadControl.HasFiles)
+                        {
+                            foreach (var uploadedFile in fileUploadControl.PostedFiles)
+                            {
+                                Stream fs = uploadedFile.InputStream;
+                                byte[] _bytes = new byte[fs.Length];
+                                fs.Position = 0;
+                                fs.Read(_bytes, 0, (int)fs.Length);
+                                fs.Close();
+                                fs.Dispose();
+
+                                IR5Item.Attachments.Add(uploadedFile.FileName, _bytes);
+                            }
+                        }
 
                         if (!String.IsNullOrEmpty(Convert.ToString(this.rvf_reportViewed_ta.Value)))
 
@@ -2442,13 +2469,9 @@ namespace SL.FG.FFL.WebParts.IR05DIForm
 
                                 if (!String.IsNullOrEmpty(Convert.ToString(IR5Item["OccupationTrade"])))
                                     this.OccupationTrade_tf.Value = Convert.ToString(IR5Item["OccupationTrade"]);
+                      
 
-
-
-
-
-                                String UserName = oSPWeb.CurrentUser.LoginName;
-
+                                String UserName = oSPWeb.CurrentUser.Name;
 
                                 if (!String.IsNullOrEmpty(Convert.ToString(IR5Item["Reportviewed"])))
 

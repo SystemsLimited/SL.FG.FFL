@@ -960,6 +960,11 @@
         </Row>
         <Row>
           <Field Name="Title">IR1FormLink</Field>
+          <Field Name="Value">Sites/ffl/SitePages/IR01On.aspx</Field>
+          <Field Name="SortOrder">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">IR_1FormLink</Field>
           <Field Name="Value">SitePages/IR01On.aspx</Field>
           <Field Name="SortOrder">1</Field>
         </Row>
@@ -1014,6 +1019,11 @@
         <Row>
           <Field Name="Title">IR_1OffFormLink</Field>
           <Field Name="Value">SitePages/IR01Off.aspx</Field>
+          <Field Name="SortOrder">1</Field>
+        </Row>
+        <Row>
+          <Field Name="Title">IR1OffFormLink</Field>
+          <Field Name="Value">sites/ffl/SitePages/IR01Off.aspx</Field>
           <Field Name="SortOrder">1</Field>
         </Row>
         <Row>

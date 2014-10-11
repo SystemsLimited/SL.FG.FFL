@@ -107,7 +107,7 @@
                     var departmentId = $this.find("span.departmentId").html();
                     var departmentName = $this.find("span.departmentName").html();
                     var targetDate = $this.find("span.targetDate").html();
-                    var observationSpot = $this.find("span.concurrenceOfRP").html();
+                    var concurrenceOfRP = $this.find("span.concurrenceOfRP").html();
                     var status = $this.find("span.status").html();
 
                     if (typeof recommendationId == 'undefined') {
@@ -645,7 +645,7 @@
     <asp:Button ID="btnApprovingAuthoritySave" runat="server" Visible="false" Text="Save" OnClick="btnApprovingAuthoritySave_Click" CssClass="btnApprove" OnClientClick="return SaveIRDIDetails(true, 'Save' , true);" />
     <asp:Button ID="btnApprovingAuthorityApprove" runat="server" Visible="false" Text="Approve" OnClick="btnApprovingAuthorityApprove_Click" CssClass="btnApprove" OnClientClick="return SaveIRDIDetails(true, 'Approve', true);" />
     <asp:Button ID="btnApprovingAuthorityDisApprove" runat="server" Visible="false" Text="Reject" OnClick="btnApprovingAuthorityDisapprove_Click" CssClass="btnReject" OnClientClick="return SaveIRDIDetails(true, 'Reject' ,true);" />
-    <asp:Button ID="btnHSEApprove" runat="server" Visible="false" Text="Approve And Send Recommendation" OnClick="btnHSEApprove_Click" CssClass="btnApprove" OnClientClick="return SaveIRDIDetails(false, 'Approve' ,true);" />
+    <asp:Button ID="btnHSEApprove" runat="server" Visible="false" Text="Approve and Send Recommendation" OnClick="btnHSEApprove_Click" CssClass="btnApprove" OnClientClick="return SaveIRDIDetails(false, 'Approve' ,true);" />
     <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" CssClass="btnCancel" />
 </div>
 

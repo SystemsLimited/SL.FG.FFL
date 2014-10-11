@@ -208,15 +208,15 @@
                 flag = true;
             }
             else if (action == "Approve") {
-                message = "Do you want to Approve Save IR-Recommendation?";
+                message = "Do you want to Approve IR-Recommendation?";
                 flag = true;
             }
             else if (action == "Reject") {
-                message = "Do you want to Reject Save IR-Recommendation?";
+                message = "Do you want to Reject IR-Recommendation?";
                 flag = true;
             }
             else if (action == "Send") {
-                message = "Do you want to Send Save IR-Recommendation?";
+                message = "Do you want to Send IR-Recommendation?";
                 flag = true;
             }
         }

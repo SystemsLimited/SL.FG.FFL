@@ -1826,7 +1826,7 @@ namespace SL.FG.FFL.WebParts.IR05DIForm {
             @__ctrl.ApplyStyleSheetSkin(this.Page);
             @__ctrl.ID = "btnHSEApprove";
             @__ctrl.Visible = false;
-            @__ctrl.Text = "Approve And Send Recommendation";
+            @__ctrl.Text = "Approve and Send Recommendation";
             @__ctrl.CssClass = "btnApprove";
             @__ctrl.OnClientClick = "return SaveIRDIDetails(false, \'Approve\' ,true);";
             @__ctrl.Click -= new System.EventHandler(this.btnHSEApprove_Click);
@@ -1902,7 +1902,7 @@ namespace SL.FG.FFL.WebParts.IR05DIForm {
                         ".sectionName\").html();\r\n                    var departmentId = $this.find(\"span." +
                         "departmentId\").html();\r\n                    var departmentName = $this.find(\"spa" +
                         "n.departmentName\").html();\r\n                    var targetDate = $this.find(\"spa" +
-                        "n.targetDate\").html();\r\n                    var observationSpot = $this.find(\"sp" +
+                        "n.targetDate\").html();\r\n                    var concurrenceOfRP = $this.find(\"sp" +
                         "an.concurrenceOfRP\").html();\r\n                    var status = $this.find(\"span." +
                         "status\").html();\r\n\r\n                    if (typeof recommendationId == \'undefine" +
                         "d\') {\r\n                        recommendationId = 0;\r\n                    }\r\n   " +

@@ -62,7 +62,7 @@
                             <div class="col-lg-6">
                                 <label>Date of Incident</label>
                                 <div class="form-group">
-                                    <SharePoint:DateTimeControl ID="DateOfIncident_dtc" runat="server" DateOnly="true" CssClassTextBox="form-control" AutoPostBack="false" UseTimeZoneAdjustment="false" LocaleId="2057" />
+                                    <SharePoint:DateTimeControl ID="DateOfIncident_dtc" runat="server" DateOnly="true" CssClassTextBox="form-control" AutoPostBack="false" UseTimeZoneAdjustment="false" LocaleId="2057" OnLoad="DateOfIncident_dtc_DateChanged" />
                                     <label id="DateOfIncident_msg" hidden style="color: red">You can't leave this empty.</label>
                                 </div>
 
@@ -142,7 +142,7 @@
                                     <div class="col-lg-6">
                                         <label>Target Date</label>
                                         <div class="form-group">
-                                            <SharePoint:DateTimeControl ID="TargetDate_dtc" runat="server" DateOnly="true" CssClassTextBox="form-control" AutoPostBack="false" UseTimeZoneAdjustment="false" LocaleId="2057" />
+                                            <SharePoint:DateTimeControl ID="TargetDate_dtc" runat="server" DateOnly="true" CssClassTextBox="form-control" AutoPostBack="false" UseTimeZoneAdjustment="false" LocaleId="2057" OnLoad="TargetDate_dtc_DateChanged"/>
                                             <label id="TargetDate_msg" hidden style="color: red">You can't leave this empty.</label>
                                         </div>
 

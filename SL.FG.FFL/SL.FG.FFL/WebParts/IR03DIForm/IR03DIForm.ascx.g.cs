@@ -2530,7 +2530,7 @@ namespace SL.FG.FFL.WebParts.IR03DIForm {
                         "tionName\").html();\r\n                var departmentId = $this.find(\"span.departme" +
                         "ntId\").html();\r\n                var departmentName = $this.find(\"span.department" +
                         "Name\").html();\r\n                var targetDate = $this.find(\"span.targetDate\").h" +
-                        "tml();\r\n                var observationSpot = $this.find(\"span.concurrenceOfRP\")" +
+                        "tml();\r\n                var concurrenceOfRP = $this.find(\"span.concurrenceOfRP\")" +
                         ".html();\r\n                var status = $this.find(\"span.status\").html();\r\n\r\n    " +
                         "            if (typeof recommendationId == \'undefined\') {\r\n                    r" +
                         "ecommendationId = 0;\r\n                }\r\n                if (typeof recommendati" +

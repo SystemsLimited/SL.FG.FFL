@@ -199,7 +199,14 @@ $(document).ready(function () {
             $('[id$=responsibleDepartment_ddl]').val("0");
             $('[id$=responsibleSection_ddl]').val("0");
             //clear client people picker
-            $('.sp-peoplepicker-delImage[id$=_DeleteUserLink]').trigger('click');
+            if ($('.sp-peoplepicker-delImage[id$=_DeleteUserLink]').length > 0) {
+                $('.sp-peoplepicker-delImage[id$=_DeleteUserLink]').each(function () {
+                    var tempId = $(this).attr('id');
+                    if (typeof tempId != "undefined" && tempId.indexOf("responsible") > -1) {
+                        $(this).trigger('click');
+                    }
+                });
+            }
             $('[id$=responsiblePersonEmail_tf]').val("");
             $('[id$=responsiblePersonUsername_hd]').val("");
             $('[id$=detailedReportNo_rb]').prop("checked", "checked");

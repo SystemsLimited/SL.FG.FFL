@@ -696,4 +696,7 @@ $(document).ready(function () {
     }
 
     setInterval('autoRefresh(true)', 2160000); // this will reload page after every 5 secounds;
+
+    $('.panel-body .col-lg-12').hide();
+    $('.panel-body .GridViewStyle').parents(".col-lg-12 :hidden").show();
 });

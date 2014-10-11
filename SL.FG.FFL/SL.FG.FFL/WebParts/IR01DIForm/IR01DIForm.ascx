@@ -149,7 +149,7 @@
                 var departmentId = $this.find("span.departmentId").html();
                 var departmentName = $this.find("span.departmentName").html();
                 var targetDate = $this.find("span.targetDate").html();
-                var observationSpot = $this.find("span.concurrenceOfRP").html();
+                var concurrenceOfRP = $this.find("span.concurrenceOfRP").html();
                 var status = $this.find("span.status").html();
 
                 if (typeof recommendationId == 'undefined') {

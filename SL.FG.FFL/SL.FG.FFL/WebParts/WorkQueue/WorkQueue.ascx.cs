@@ -1856,7 +1856,7 @@ namespace SL.FG.FFL.WebParts.WorkQueue
 
                     String currentUserName = Utility.GetUsername(currentUser.LoginName);
 
-                    query.Query = "<Where><And><And><Neq><FieldRef Name='Status' /><Value Type='Text'>Completed</Value></Neq><Eq><FieldRef Name='IsSaveAsDraft' /><Value Type='Text'>True</Value></Eq></And><Contains><FieldRef Name='Assignee' /><Value Type='Note'>" + currentUserName + "</Value></Contains></And></Where>";
+                    query.Query = "<Where><And><Neq><FieldRef Name='Status' /><Value Type='Text'>Completed</Value></Neq><Contains><FieldRef Name='Assignee' /><Value Type='Note'>" + currentUserName + "</Value></Contains></And></Where>";
                     //query.Query = "<Where><And><Eq><FieldRef Name='AssigneeEmail' /><Value Type='Text'>" + currentUser.Email + "</Value></Eq><Eq><FieldRef Name='IsSavedAsDraft' /><Value Type='Boolean'>0</Value></Eq></And></Where>";
                     spListItems = splistMSARecommendation.GetItems(query);
 
@@ -2094,7 +2094,7 @@ namespace SL.FG.FFL.WebParts.WorkQueue
                                 }
                             }
 
-                            string recommendationLink = Utility.GetRedirectUrl("IR1FormLink");
+                            string recommendationLink = Utility.GetRedirectUrl("IR_1FormLink");
 
                             dr["LinkFileName"] = string.Format("{0}?IRID=" + item["ID"], recommendationLink);
 

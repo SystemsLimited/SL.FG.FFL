@@ -1089,7 +1089,10 @@ namespace SL.FG.FFL.WebParts.IR01OnForm
                     if (!String.IsNullOrEmpty(Convert.ToString(imiItem["MORemarks"])))
 
                         this.MORemarks_ta.Value = Convert.ToString(imiItem["MORemarks"]);
-
+                    else
+                    {
+                        this.MOFields_div.Visible = false;
+                    }
                 }
 
             }
@@ -1471,7 +1474,33 @@ namespace SL.FG.FFL.WebParts.IR01OnForm
 
                 if (imiItem != null)
                 {
+                    if (!String.IsNullOrEmpty(this.hdnFilesNames.Value))
+                    {
+                        var fileNames = hdnFilesNames.Value.Split('~');
 
+                        foreach (var item in fileNames)
+                        {
+                            if (!String.IsNullOrEmpty(item))
+                            {
+                                imiItem.Attachments.Delete(item);
+                            }
+                        }
+                    }
+
+                    if (this.fileUploadControl.HasFiles)
+                    {
+                        foreach (var uploadedFile in fileUploadControl.PostedFiles)
+                        {
+                            Stream fs = uploadedFile.InputStream;
+                            byte[] _bytes = new byte[fs.Length];
+                            fs.Position = 0;
+                            fs.Read(_bytes, 0, (int)fs.Length);
+                            fs.Close();
+                            fs.Dispose();
+
+                            imiItem.Attachments.Add(uploadedFile.FileName, _bytes);
+                        }
+                    }
 
                     if (!String.IsNullOrEmpty(Convert.ToString(this.IncidentCategory_hdn.Value)))
                     {
@@ -1686,7 +1715,7 @@ namespace SL.FG.FFL.WebParts.IR01OnForm
 
                         if (oWebSite != null)
                         {
-                            string IR_1Link = Utility.GetRedirectUrl("IR1FormLink");
+                            string IR_1Link = Utility.GetRedirectUrl("IR_1FormLink");
                             string subject = Utility.GetValueByKey("MOEmailSubject");
                             string body = Utility.GetValueByKey("MOEmailTemplate");
 
@@ -1756,7 +1785,7 @@ namespace SL.FG.FFL.WebParts.IR01OnForm
                                 SupervisorName = IR_1item["HOA"].ToString();
                             }
 
-                            string IR_1Link = Utility.GetRedirectUrl("IR1FormLink");
+                            string IR_1Link = Utility.GetRedirectUrl("IR_1FormLink");
                             string subject = Utility.GetValueByKey("SupervisorEmailSubject");
                             string body = Utility.GetValueByKey("SupervisorEmailTemplate");
 
